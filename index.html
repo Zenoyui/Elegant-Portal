@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Portal | Вход и Регистрация</title>
+    <link rel="stylesheet" href="index.css">
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <div class="sidebar">
+            <div class="decoration"></div>
+            <div class="decoration"></div>
+            <h1>Elegant Portal</h1>
+            <p>Добро пожаловать в наш эксклюзивный портал. Зарегистрируйтесь или войдите, чтобы получить доступ к персонализированным возможностям и премиум-контенту.</p>
+            <p>Мы гарантируем безопасность ваших данных и уникальный пользовательский опыт.</p>
+        </div>
+        
+        <div class="form-container">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="login">Вход</button>
+                <button class="tab-btn" data-tab="register">Регистрация</button>
+                <div class="tab-indicator"></div>
+            </div>
+            
+            <div class="forms">
+                <div class="form login-form active">
+                    <div class="input-group">
+                        <label for="login-email">Электронная почта</label>
+                        <input type="email" id="login-email" placeholder="Ваш email адрес" required>
+                        <div class="icon">✉️</div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="login-password">Пароль</label>
+                        <input type="password" id="login-password" placeholder="Введите пароль" required>
+                        <div class="icon">🔒</div>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Запомнить меня</label>
+                    </div>
+                    
+                    <div class="forgot-password">
+                        <a href="#" class="form-link">Забыли пароль?</a>
+                    </div>
+                    
+                    <button class="btn login-btn">Войти</button>
+                    
+                    <div class="social-login">
+                        <div class="divider">
+                            <span>или войти через</span>
+                        </div>
+                        
+                        <div class="social-btn-group">
+                            <div class="social-btn">f</div>
+                            <div class="social-btn">G</div>
+                            <div class="social-btn">in</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form register-form">
+                    <div class="input-group">
+                        <label for="register-name">Полное имя</label>
+                        <input type="text" id="register-name" placeholder="Иван Иванов" required>
+                        <div class="icon">👤</div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="register-email">Электронная почта</label>
+                        <input type="email" id="register-email" placeholder="Ваш email адрес" required>
+                        <div class="icon">✉️</div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="register-password">Создайте пароль</label>
+                        <input type="password" id="register-password" placeholder="Минимум 8 символов" required>
+                        <div class="icon">🔒</div>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms">
+                        <label for="terms">Я принимаю <a href="#" class="form-link">условия использования</a></label>
+                    </div>
+                    <button class="btn register-btn">Зарегистрироваться</button>
+                    </div>
+                </div>
+                
+                <div class="loading">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-text">Сделано Zenoyui</div>
+    <div class="notification" id="notification"></div>
+    <script src="index.js"></script>
+</body>
+</html>
