@@ -265,6 +265,10 @@
             _indicator.style.width = `${tabRect.width}px`;
             _indicator.style.left = `${tabRect.left - containerRect.left}px`;
         }
+    
+        const activeForm = document.querySelector('.form.active');
+        const formsContainer = document.querySelector('.forms');
+        formsContainer.style.height = `${activeForm.offsetHeight}px`;
     };
     
     const _init = () => {
@@ -289,6 +293,10 @@
                 _indicator.style.width = `${tabRect.width}px`;
                 _indicator.style.left = `${tabRect.left - containerRect.left}px`;
             }
+    
+            const activeForm = document.querySelector('.form.active');
+            const formsContainer = document.querySelector('.forms');
+            formsContainer.style.height = `${activeForm.offsetHeight}px`;
         }, 200));
         
         const savedUser = localStorage.getItem('user');
@@ -303,6 +311,10 @@
                 _$('remember-me').checked = true;
             }
         }
+    
+        const activeForm = document.querySelector('.form.active');
+        const formsContainer = document.querySelector('.forms');
+        formsContainer.style.height = `${activeForm.offsetHeight}px`;
     };
     
     document.addEventListener('DOMContentLoaded', _init);
