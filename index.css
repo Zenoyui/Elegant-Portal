@@ -29,10 +29,12 @@ body {
     color: var(--text-dark);
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow-x: hidden;
     perspective: 1000px;
+    padding: 20px 0;
 }
 
 body::before {
@@ -57,8 +59,8 @@ body::before {
 }
 
 .container {
-    width: 900px;
-    height: auto;
+    width: 100%;
+    max-width: 900px;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     box-shadow: var(--shadow-lg), 0 20px 40px rgba(93, 52, 177, 0.2);
@@ -67,6 +69,8 @@ body::before {
     position: relative;
     transform-style: preserve-3d;
     animation: containerIntro 1.5s var(--cubic-bezier) forwards;
+    margin: 10px;
+    flex-direction: row;
 }
 
 @keyframes containerIntro {
@@ -115,17 +119,17 @@ body::before {
     }
 }
 .footer-text {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
     color: var(--text-light);
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     opacity: 0.8;
     transition: opacity 0.3s ease;
     animation: fadeInUp 1s ease forwards;
+    padding: 10px;
 }
 
 .footer-text:hover {
@@ -177,21 +181,21 @@ body::before {
 }
 
 .sidebar .decoration:nth-child(1) {
-    width: 150px;
-    height: 150px;
-    border: 15px solid var(--text-light);
-    border-radius: 50%;
-    top: -40px;
-    right: -40px;
-}
-
-.sidebar .decoration:nth-child(2) {
     width: 100px;
     height: 100px;
     border: 10px solid var(--text-light);
+    border-radius: 50%;
+    top: -20px;
+    right: -20px;
+}
+
+.sidebar .decoration:nth-child(2) {
+    width: 80px;
+    height: 80px;
+    border: 8px solid var(--text-light);
     border-radius: 30%;
-    bottom: 40px;
-    left: -30px;
+    bottom: 20px;
+    left: -15px;
     transform: rotate(45deg);
 }
 
@@ -268,14 +272,13 @@ body::before {
 
 .forms {
     position: relative;
-    height: 470px;
-    overflow: hidden;
+    height: auto;
+    overflow: visible;
 }
 
 .form {
     position: absolute;
     width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
     padding: 10px;
@@ -283,12 +286,14 @@ body::before {
     transform: translateX(100px);
     transition: all 0.5s var(--cubic-bezier);
     pointer-events: none;
+    height: auto;
 }
 
 .form.active {
     opacity: 1;
     transform: translateX(0);
     pointer-events: all;
+    position: relative;
 }
 
 .input-group {
@@ -416,7 +421,7 @@ body::before {
 }
 
 .social-login {
-    margin-top: 30px;
+    margin-top: 20px;
     text-align: center;
 }
 
@@ -550,37 +555,95 @@ body::before {
     opacity: 0.6;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 768px) {
     .container {
-        width: 95%;
-        height: auto;
         flex-direction: column;
+        margin: 5px;
+        border-radius: 10px;
     }
-
+    
     .sidebar {
-        padding: 30px;
-        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-    }
-
-    .forms {
-        height: 380px;
-    }
-}
-
-@media (max-width: 600px) {
-    .sidebar {
-        padding: 25px;
+        padding: 20px;
+        clip-path: none;
+        text-align: center;
     }
 
     .form-container {
-        padding: 25px;
+        padding: 20px;
     }
 
-    .forms {
-        height: 420px;
+    .sidebar h1 {
+        font-size: 2rem;
+    }
+
+    .sidebar p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .sidebar {
+        padding: 15px;
+    }
+
+    .sidebar h1 {
+        font-size: 1.5rem;
+    }
+
+    .sidebar p {
+        font-size: 0.9rem;
+    }
+
+    .form-container {
+        padding: 15px;
+    }
+
+    .input-group {
+        margin-bottom: 15px;
+    }
+
+    .input-group label {
+        font-size: 0.8rem;
+    }
+
+    .input-group input {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 12px;
+        font-size: 0.9rem;
     }
 
     .social-btn-group {
-        gap: 10px;
+        gap: 8px;
+    }
+
+    .social-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .tabs {
+        margin-bottom: 15px;
+    }
+
+    .tab-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .checkbox-group label {
+        font-size: 0.8rem;
+    }
+
+    .form-link {
+        font-size: 0.8rem;
     }
 }
